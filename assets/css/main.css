@@ -1,0 +1,316 @@
+:root {
+  --main-bg: rgb(250, 244, 236);
+  --main: rgb(47, 46, 43);
+  --link: #2727d9;
+  --link-bright: #980909;
+  --muted: #afa598;
+  --muted-2: #ccc;
+  --dark-bg: #2a3644;
+  --bright: #e5eff5;
+
+  --border-radius: 5px;
+
+  --h1: 3.157rem;
+  --h2: 2.369rem;
+  --h3: 1.777rem;
+  --h4: 1.333rem;
+}
+
+html { font-size: 1.375em; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  color: var(--main);
+  background-color: var(--main-bg);
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+p { margin-bottom: var(--h4); }
+
+a:link, a:visited {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+blockquote {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  padding: 0.75rem 2rem 0.75rem 1rem;
+  font-size: 1rem;
+  font-style: oblique;
+  margin: 0;
+  border-left: 5px solid var(--link-bright);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+}
+
+li {
+  line-height: 1.75rem;
+}
+
+/* main site navigation */
+nav.site-nav ul { padding-inline-start: 0; }
+nav.site-nav ul li { list-style: none; display: inline; }
+nav.site-nav ul li:after { content:" | "; color: var(--muted-2); }
+nav.site-nav ul li:last-child:after { content: none; }
+nav.site-nav a:link, nav.site-nav a:visited { color: var(--link-bright); }
+
+pre {
+  overflow-x: auto;
+  padding: 0.75rem 1rem;
+  max-width: 100%;
+  border: none;
+  color: var(--bright);
+  background: var(--dark-bg);
+  border-radius: var(--border-radius);
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--muted-2);
+  margin: 1.5rem 0;
+}
+
+.container {
+  max-width: 40em;
+  padding: 0 0.8rem;
+  margin: auto;
+}
+
+/* Typography */
+/* ========== */
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+  font-weight: 700;
+  line-height: 1;
+}
+
+h1, .h1 {
+  font-weight: 900;
+  font-size: var(--h1);
+  margin: var(--h3) 0;
+}
+
+h2, .h2 {
+  font-size: var(--h2);
+  margin: var(--h1) 0 var(--h4) 0;
+}
+
+h3, .h3 {
+  font-size: var(--h3);
+  margin: var(--h2) 0 var(--h4);
+}
+
+h4, .h4 {
+  font-size: var(--h4);
+  margin: var(--h2) 0 var(--h4);
+}
+
+@media (max-width: 714px) {
+  h1, .h1 {
+    font-size: var(--h2);
+    margin-top: var(--h4);
+  }
+
+  h2, .h2 {
+    font-size: var(--h3);
+    margin-bottom: 0;
+  }
+
+  h3, .h3 {
+    font-size: var(--h4);
+    margin-bottom: 0;
+  }
+
+  h4, .h4 {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+
+
+h1 a:link, h1 a:visited, h1 a:hover, a.unstyled:link, a.unstyled:visited, a.unstyled:hover, h2 a:link, h2 a:visited, h2 a:hover, a.unstyled:link, a.unstyled:visited, a.unstyled:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+small, .small { font-size: 0.75em; line-height: 1.333; }
+.text-muted { color: #afa598; }
+.text-muted a, .text-muted a:visited { color: inherit; }
+
+footer {
+  text-align: center;
+  margin: 4rem 0 0 0;
+  padding: 2rem 1rem 1rem;
+  background-color: #f4e2b626;
+  border-top: 1px solid #cbc3af;
+}
+
+.tags a {
+  border: 1px solid;
+  padding: 2px 5px;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.tags a:hover {
+  background-color: #fcfaf8;
+}
+
+/* Utilities */
+.mb2 { margin-bottom: 2rem; }
+.mb3 { margin-bottom: 3rem; }
+.mb4 { margin-bottom: 4rem; }
+.mt2 { margin-top: 2rem; }
+.mt3 { margin-top: 3rem; }
+.mt4 { margin-top: 4rem; }
+.inline-block { display: inline-block; }
+
+
+/* IMAGE WIDTH STYLES */
+/* ================== */
+
+figure.kg-width-full {
+  width: 100vw;
+  position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+figure.kg-width-wide {
+  width: 1200px;
+  position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -600px;
+	margin-right: -600px;
+}
+
+
+/* IMAGE GALLERY STYLES */
+/* ==================== */
+
+.kg-gallery-card { }
+.kg-gallery-container { }
+.kg-gallery-row { }
+.kg-gallery-image { }
+
+/*
+Docs can be found here: http://themes.ghost.org/docs/ghost-editor#section-gallery-card
+
+The implementation that Ghost recommends is pretty robust, with one caveat: it needs a few lines of JavaScrpt. Example can be found here:
+https://github.com/TryGhost/Casper/pull/475/files#diff-ce5e030f2e2e2a50f18199464f07ea70
+*/
+
+
+/* BOOKMARK CARD STYLES */
+/* ==================== */
+.kg-bookmark-card {
+  width: 100%;
+  background-color: #fcfaf8;
+  padding: 0!important;
+  margin: 30px auto!important;
+}
+
+a.kg-bookmark-container {
+  color: inherit !important;
+}
+
+.kg-bookmark-container {
+  display: flex;
+  color: var(--primary-foreground-color);
+  text-decoration: none !important;
+  min-height: 148px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.1);
+  border-radius: var(--border-radius);
+}
+
+.kg-bookmark-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: .8rem 1rem;
+}
+
+.kg-bookmark-title {
+  font-weight: 600;
+}
+
+.kg-bookmark-description {
+  font-size: small;
+  margin-top: 0.5rem;
+  overflow-y: hidden;
+}
+
+.kg-bookmark-metadata {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: .9rem;
+  font-weight: 400;
+  color: #9b9b9b;
+  margin-top: 14px;
+}
+
+.kg-bookmark-icon {
+  width: 22px !important;
+  height: 22px !important;
+  margin-right: 8px !important;
+}
+
+.kg-bookmark-thumbnail {
+  position: relative;
+  min-width: 30%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.kg-bookmark-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%!important;
+  height: 100%!important;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.kg-bookmark-author {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.kg-bookmark-publisher {
+  font-size: small;
+  margin-left: 0.25rem;
+}

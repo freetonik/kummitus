@@ -1,0 +1,52 @@
+<article class="{{post_class}} mb4">
+
+  <div>
+    <header>
+
+      <h2 class="post-teaser__title">
+        {{#if featured}}
+          ★
+        {{/if}}
+        <a href="{{url}}">
+          {{title}}
+        </a>
+      </h2>
+    </header>
+
+    <div class="post-teaser__excerpt">
+      <p>
+        {{excerpt words="100"}}
+        <span class="read-more">…
+          <a class="read-more__link" href="{{url}}">
+            <span>read&nbsp;more&nbsp;&raquo;</span>
+          </a>
+        </span>
+      </p>
+    </div>
+
+    {{#if feature_image}}
+    <a href="{{url}}">
+    <div class="post-teaser__thumbnail" id="{{url}}-post-thumbnail">
+      <img class="post-card-image"
+        srcset="{{img_url feature_image size="xs"}} 400w,
+                {{img_url feature_image size="s"}} 600w,
+                {{img_url feature_image size="m"}} 800w"
+        src="{{img_url feature_image size="xs"}}"
+        alt="{{title}}"
+      />
+    </div>
+    </a>
+    {{/if}}
+
+    <small class="text-muted text-light">
+      <time class="post-teaser__meta__date" datetime="{{date format='YYYY-MM-DD'}}">
+        {{date format="MMMM Do, YYYY"}}.
+      </time>
+      {{#if tags}}
+        <span class="tags">
+          {{tags separator=" " prefix="Tagged "}}
+        </span>
+      {{/if}}
+    </small>
+ </div> <!-- end post-teaser__text-container -->
+ </article>

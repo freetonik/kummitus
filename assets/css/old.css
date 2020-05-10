@@ -1,0 +1,249 @@
+/* Footnotes */
+.footnotes {
+  font-size: 16px;
+}
+
+.footnotes li {
+  line-height: 1rem;
+}
+
+a.footnote-return {
+  color: inherit;
+}
+
+h3, .h3, .homepage-post h2, .homepage-post .h2 {
+  font-size: var(--h3);
+  margin: var(--h2) 0 var(--h4);
+}
+
+@media (max-width: 714px) {
+  h3, .h3, .homepage-post h2, .homepage-post .h2 {
+    font-size: var(--h4);
+    margin-bottom: 0;
+}}
+
+h4, .h4, .homepage-post h3, .homepage-post .h3 {
+  font-weight: 700;
+  font-size: var(--h4);
+  margin-top: 2rem;
+  margin-bottom: 1.4rem;
+}
+
+@media (max-width: 714px) {
+  h4, .h4, .homepage-post h3, .homepage-post .h3 {
+    font-size: 1rem;
+    margin-bottom: 0;
+}}
+
+/* SUBSCRIPTION & MEMBERSHIP STYLES */
+/* ================================= */
+
+.notification-area {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: #99ea02;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.billing-cancel .notification-area {
+  background-color: #ccc;
+}
+
+.message-success,
+.message-error {
+  display: none;
+}
+
+.message-error,
+[data-members-error] {
+  color: red;
+}
+
+.message-success {
+  color: green;
+}
+
+.loading button span,
+.error button span,
+.success button span {
+  display: none;
+}
+
+.loading button::after {
+  content: "Loading...";
+}
+
+.error button::after {
+  content: "Error :(";
+}
+
+.success button::after {
+  content: "Success :)";
+}
+
+.success ~ .message-success,
+.invalid ~ .message-error,
+.error ~ .message-error {
+  display: block;
+}
+
+
+
+/* Bookshelf */
+.book {
+  display:flex;
+  margin-top:2rem
+}
+
+.book .book_descriptuon h4 {
+  margin:0 0 1rem;
+  font-style: inherit;
+  font-size:1rem;
+  font-weight:bold;
+  line-height:1.5
+}
+
+.book .book_cover_container {
+  width:100px;
+  flex:0 0 100px;
+  padding-top:6px;
+  padding-right:1.5rem;
+}
+
+.book .book_cover_container .book_cover {
+  width:100%;
+  height:auto
+}
+
+@media only screen and (max-width: 600px) {
+  .book {
+    flex-direction: column;
+  }
+  .book .book_descriptuon h4 {
+    margin-top: 1rem;
+  }
+}
+
+.fancytitle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: small;
+}
+
+.fancytitle:before,
+.fancytitle:after {
+  content: '';
+  border-top: 1px solid #dbd1c3;
+  margin: 0 20px 0 0;
+  flex: 1 0 20px;
+}
+
+.fancytitle:after {
+  margin: 0 0 0 20px;
+}
+
+/* Pagination */
+ul.pagination {
+  list-style: none;
+  padding-left: 0;
+}
+
+li.page-item {
+  display: inline-block;
+  padding: 4px;
+}
+
+/* ============= */
+
+/* .site-content { */
+/*   flex: 1; */
+/* } */
+
+/* blockquote { margin-left: 1.777rem; } */
+
+
+/* @media (max-width: 850px) { */
+/*   .container, .container-fluid { */
+/*     margin-right: auto; */
+/*     margin-left: auto; */
+/*     padding: 21px; */
+/*   } */
+
+/*   .container-fluid .primary-title { */
+/*     margin-top: 0.5rem; */
+/*   } */
+/* } */
+
+/* figure { */
+/*   margin: 0; */
+/*   font-size: 80%; */
+/* } */
+
+/* Honestly Undefined Container */
+/* .container-hu { */
+/*   max-width: 900px; */
+/*   margin-right: auto; */
+/*   margin-left: auto; */
+/*   padding: 21px; */
+/*   text-align: center; */
+/* } */
+
+/* .article-meta-hu h1 { */
+/*   margin: 10px 0; */
+/* } */
+
+/* .article-meta-hu p { */
+/*   margin-bottom: 0.25em; */
+/* } */
+
+/* .article-meta-hu hr { */
+/*   margin: 1.25em 0; */
+/* } */
+
+/* nav.nav-hu { */
+/*   margin: 0.25em 0 1em; */
+/* } */
+
+/* nav.nav-hu a { */
+/*   background-color:  #f4e2b626; */
+/*   border: 1px solid #cbc3af; */
+/*   padding: 3px 9px 3px 10px; */
+/*   border-radius: 3px; */
+/*   margin: 0 5px; */
+/*   font-size: 75%; */
+/*   color: inherit; */
+/* } */
+
+/* nav.nav-hu a:hover { */
+/*   background-color: #ad904c33; */
+/*   text-decoration: none; */
+/* } */
+
+
+/* Images wrapped in <strong> are wide when possible */
+
+/* figure.wide img, */
+/* strong img { */
+/*   max-width: 1000px; */
+/* } */
+
+/* .highlight { */
+/*   width: 1000px; */
+/* } */
+
+/* @media (max-width: 1231px) { */
+/*   figure.wide img, */
+/*   strong img { */
+/*     /\* margin-left: 0; *\/ */
+/*     max-width: 100%; */
+/*   } */
+/*   .highlight { */
+/*     width: 100%; */
+/*   } */
+/* } */
