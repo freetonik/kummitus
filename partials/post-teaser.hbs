@@ -15,18 +15,24 @@
 
     <div class="post-teaser__excerpt">
       <p>
-        {{excerpt words="100"}}
-        <span class="read-more">…
-          <a class="read-more__link" href="{{url}}">
-            <span>read&nbsp;more&nbsp;&raquo;</span>
-          </a>
-        </span>
+        {{#if excerpt}}
+          {{excerpt words="100"}}
+          <span class="read-more">
+            <a class="read-more__link" href="{{url}}">
+              <span>Read&nbsp;more&nbsp;&raquo;</span>
+            </a>
+          </span>
+        {{else}}
+          {{content}}
+        {{/if}}
+
+
       </p>
     </div>
 
     {{#if feature_image}}
     <a href="{{url}}">
-    <div class="post-teaser__thumbnail" id="{{url}}-post-thumbnail">
+    <div class="post-teaser__thumbnail mb1" id="{{url}}-post-thumbnail">
       <img class="post-card-image"
         srcset="{{img_url feature_image size="xs"}} 400w,
                 {{img_url feature_image size="s"}} 600w,
@@ -39,9 +45,11 @@
     {{/if}}
 
     <small class="text-muted text-light">
-      <time class="post-teaser__meta__date" datetime="{{date format='YYYY-MM-DD'}}">
+      <a href="{{url}}">
+        <time class="post-teaser__meta__date" datetime="{{date format='YYYY-MM-DD'}}">
         {{date format="MMMM Do, YYYY"}}.
-      </time>
+        </time>
+        </a>
       {{#if tags}}
         <span class="tags">
           {{tags separator=" " prefix="Tagged "}}

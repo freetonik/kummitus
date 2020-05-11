@@ -5,6 +5,7 @@
   --link-bright: #980909;
   --muted: #afa598;
   --muted-2: #ccc;
+  --muted-active: #fcfaf8;
   --dark-bg: #2a3644;
   --bright: #e5eff5;
 
@@ -17,10 +18,14 @@
 }
 
 html { font-size: 1.375em; }
+@media (max-width: 714px) {
+  html { font-size: 1em; }
+}
+
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
+  line-height: 1.5rem;
   color: var(--main);
   background-color: var(--main-bg);
   display: flex;
@@ -43,11 +48,11 @@ a:hover { text-decoration: underline; }
 
 blockquote {
   font-family: Georgia, Times, "Times New Roman", serif;
-  padding: 0.75rem 2rem 0.75rem 1rem;
-  font-size: 1rem;
   font-style: oblique;
-  margin: 0;
+  font-size: 1rem;
   border-left: 5px solid var(--link-bright);
+  padding: 0.75rem 2rem 0.75rem 1rem;
+  margin: 0;
 }
 
 img {
@@ -56,14 +61,13 @@ img {
 }
 
 figure {
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 
 figcaption {
-  text-align: center;
   font-style: italic;
   font-size: smaller;
+  text-align: center;
 }
 
 li {
@@ -78,13 +82,13 @@ nav.site-nav ul li:last-child:after { content: none; }
 nav.site-nav a:link, nav.site-nav a:visited { color: var(--link-bright); }
 
 pre {
-  overflow-x: auto;
-  padding: 0.75rem 1rem;
   max-width: 100%;
-  border: none;
+  padding: 0.75rem 1rem;
   color: var(--bright);
   background: var(--dark-bg);
   border-radius: var(--border-radius);
+  border: none;
+  overflow-x: auto;
 }
 
 hr {
@@ -94,10 +98,16 @@ hr {
   margin: 1.5rem 0;
 }
 
-.container {
-  max-width: 40em;
+.content {
+  max-width: 40rem;
   padding: 0 0.8rem;
   margin: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content-narrow {
+  max-width: 35rem;
 }
 
 /* Typography */
@@ -128,38 +138,18 @@ h4, .h4 {
   margin: var(--h2) 0 var(--h4);
 }
 
-@media (max-width: 714px) {
-  h1, .h1 {
-    font-size: var(--h2);
-    margin-top: var(--h4);
-  }
-
-  h2, .h2 {
-    font-size: var(--h3);
-    margin-bottom: 0;
-  }
-
-  h3, .h3 {
-    font-size: var(--h4);
-    margin-bottom: 0;
-  }
-
-  h4, .h4 {
-    font-size: 1rem;
-    margin-bottom: 0;
-  }
-}
-
-
-
 h1 a:link, h1 a:visited, h1 a:hover, a.unstyled:link, a.unstyled:visited, a.unstyled:hover, h2 a:link, h2 a:visited, h2 a:hover, a.unstyled:link, a.unstyled:visited, a.unstyled:hover {
   color: inherit;
   text-decoration: none;
 }
 
-small, .small { font-size: 0.75em; line-height: 1.333; }
+small, .small { font-size: 0.75rem; line-height: 1.333rem; }
 .text-muted { color: #afa598; }
 .text-muted a, .text-muted a:visited { color: inherit; }
+
+.main-header {
+  padding-top: 1rem;
+}
 
 footer {
   text-align: center;
@@ -169,19 +159,29 @@ footer {
   border-top: 1px solid #cbc3af;
 }
 
+h1.tag {
+  border: 1px solid;
+  padding: 3px 15px 5px 15px;
+  border-radius: var(--border-radius);
+  font-variant: small-caps;
+  text-decoration: none;
+  display: inline-block;
+}
+
 .tags a {
   border: 1px solid;
-  padding: 2px 5px;
+  padding: 0px 5px 3px 5px;
   border-radius: var(--border-radius);
-  text-transform: uppercase;
+  font-variant: small-caps;
   text-decoration: none;
 }
 
 .tags a:hover {
-  background-color: #fcfaf8;
+  background-color: var(--muted-active);
 }
 
 /* Utilities */
+.mb1 { margin-bottom: 1rem; }
 .mb2 { margin-bottom: 2rem; }
 .mb3 { margin-bottom: 3rem; }
 .mb4 { margin-bottom: 4rem; }
@@ -189,53 +189,58 @@ footer {
 .mt3 { margin-top: 3rem; }
 .mt4 { margin-top: 4rem; }
 .inline-block { display: inline-block; }
+.capitalize { text-transform: capitalize; }
+.fancytitle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: small;
+}
+.fancytitle:before,.fancytitle:after {
+  content: '';
+  border-top: 1px solid var(--muted-2);
+  margin: 0 1.1rem 0 0;
+  flex: 1 0 1.1rem;
+}
+.fancytitle:after {
+  margin: 0 0 0 1.1rem;
+}
 
 
 /* IMAGE WIDTH STYLES */
 /* ================== */
 
-figure.kg-width-full {
+article img {
+  display: block;
+  max-width: 100%;
+}
+
+.kg-width-wide, kg-gallery-image {
+  position: relative;
+  width: 85vw;
+  min-width: 100%;
+  margin: auto calc(50% - 50vw);
+  transform: translateX(calc(50vw - 50%));
+}
+
+.kg-width-full {
+  position: relative;
   width: 100vw;
-  position: relative;
-	left: 50%;
-	right: 50%;
-	margin-left: -50vw;
-	margin-right: -50vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
-figure.kg-width-wide {
-  width: 1200px;
-  position: relative;
-	left: 50%;
-	right: 50%;
-	margin-left: -600px;
-	margin-right: -600px;
-}
-
-
-/* IMAGE GALLERY STYLES */
-/* ==================== */
-
-.kg-gallery-card { }
-.kg-gallery-container { }
-.kg-gallery-row { }
-.kg-gallery-image { }
-
-/*
-Docs can be found here: http://themes.ghost.org/docs/ghost-editor#section-gallery-card
-
-The implementation that Ghost recommends is pretty robust, with one caveat: it needs a few lines of JavaScrpt. Example can be found here:
-https://github.com/TryGhost/Casper/pull/475/files#diff-ce5e030f2e2e2a50f18199464f07ea70
-*/
-
-
-/* BOOKMARK CARD STYLES */
-/* ==================== */
+/* BOOKMARK CARD */
+/* ============= */
 .kg-bookmark-card {
   width: 100%;
-  background-color: #fcfaf8;
-  padding: 0!important;
-  margin: 30px auto!important;
+  background-color: var(--muted-active);
+  padding: 0 !important;
+  margin: 1.36rem auto!important;
 }
 
 a.kg-bookmark-container {
@@ -266,6 +271,7 @@ a.kg-bookmark-container {
 
 .kg-bookmark-description {
   font-size: small;
+  line-height: 1rem;
   margin-top: 0.5rem;
   overflow-y: hidden;
 }
@@ -276,14 +282,13 @@ a.kg-bookmark-container {
   flex-wrap: wrap;
   font-size: .9rem;
   font-weight: 400;
-  color: #9b9b9b;
-  margin-top: 14px;
+  margin-top: 0.6rem;
 }
 
 .kg-bookmark-icon {
-  width: 22px !important;
-  height: 22px !important;
-  margin-right: 8px !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  margin-right: 0.35rem !important;
 }
 
 .kg-bookmark-thumbnail {
@@ -297,11 +302,11 @@ a.kg-bookmark-container {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%!important;
-  height: 100%!important;
-  -o-object-fit: cover;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  object-fit: cover;
+  -o-object-fit: cover;
 }
 
 .kg-bookmark-author {

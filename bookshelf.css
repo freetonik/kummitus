@@ -1,0 +1,79 @@
+/* Bookshelf */
+/* This is to be added as code injected custom HTML Style tag in Ghost page settings */
+
+h4 {
+  font-size: 1rem;
+  margin: 2.5rem 0 1rem 0;
+}
+
+h4 em {
+  color: #afa598;
+}
+
+figure.kg-card.kg-image-card {
+  float: left;
+  clear: both;
+  margin: 1.35rem 0;
+  margin-right: 1rem;
+  width: 100px;
+}
+
+p { overflow: hidden; }
+
+
+
+
+.book {
+  display:flex;
+  margin-top:2rem
+}
+
+.book .book_descriptuon h4 {
+  margin:0 0 1rem;
+  font-style: inherit;
+  font-size:1rem;
+  font-weight:bold;
+  line-height:1.5
+}
+
+.book .book_cover_container {
+  width:100px;
+  flex:0 0 100px;
+  padding-top:6px;
+  padding-right:1.5rem;
+}
+
+.book .book_cover_container .book_cover {
+  width:100%;
+  height:auto
+}
+
+@media only screen and (max-width: 600px) {
+  .book {
+    flex-direction: column;
+  }
+  .book .book_descriptuon h4 {
+    margin-top: 1rem;
+  }
+}
+
+.fancytitle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: small;
+}
+
+.fancytitle:before,
+.fancytitle:after {
+  content: '';
+  border-top: 1px solid #dbd1c3;
+  margin: 0 20px 0 0;
+  flex: 1 0 20px;
+}
+
+.fancytitle:after {
+  margin: 0 0 0 20px;
+}
