@@ -1,0 +1,27 @@
+{{!< default}}
+
+{{>content-header}}
+
+<main class="content" id="content">
+
+  <article class="page {{post_class}}">
+AAAAAAAAAAAAAAAAAAAAAA
+    {{#post}}
+
+      <header class="page__header">
+        <h1 class="page__title mt0">{{title}}</h1>
+        <section class="small text-muted text-light">
+          <time class="page__date hidden" datetime="{{date format='YYYY-MM-DD'}}">Published on {{date format="MMMM Do YYYY"}}.</time>
+
+          <time class="page__date hidden" datetime="{{date format='YYYY-MM-DD'}}">Updated on {{date updated_at format="MMMM Do YYYY"}}</time>
+        </section>
+      </header>
+
+      <section class="page__content">
+        {{content}}
+      </section>
+
+    {{/post}}
+  </article>
+
+</main>
