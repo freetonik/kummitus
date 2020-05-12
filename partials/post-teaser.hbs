@@ -15,7 +15,7 @@
 
     <div class="post-teaser__excerpt">
       <p>
-        {{#if excerpt}}
+        {{#has any="custom_excerpt"}}
           {{excerpt words="100"}}
           <span class="read-more">
             <a class="read-more__link" href="{{url}}">
@@ -24,7 +24,7 @@
           </span>
         {{else}}
           {{content}}
-        {{/if}}
+        {{/has}}
 
 
       </p>
