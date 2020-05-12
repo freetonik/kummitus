@@ -1,5 +1,6 @@
 :root {
   --main-bg: rgb(250, 244, 236);
+  /* --main-bg: rgb(255, 251, 245); */
   --main: rgb(47, 46, 43);
   --link: #2727d9;
   --link-bright: #980909;
@@ -17,14 +18,12 @@
   --h4: 1.333rem;
 }
 
-html { font-size: 1.375em; }
-@media (max-width: 714px) {
-  html { font-size: 1em; }
-}
-
+html { font-size: 1.5em; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, sans-serif;
+  ext-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
   line-height: 1.5rem;
   color: var(--main);
   background-color: var(--main-bg);
@@ -82,13 +81,23 @@ nav.site-nav ul li:last-child:after { content: none; }
 nav.site-nav a:link, nav.site-nav a:visited { color: var(--link-bright); }
 
 pre {
+  line-height: 1.2rem;
+  color: var(--bright);
   max-width: 100%;
   padding: 0.75rem 1rem;
-  color: var(--bright);
   background: var(--dark-bg);
   border-radius: var(--border-radius);
   border: none;
   overflow-x: auto;
+}
+
+pre code { padding: 0; }
+
+code {
+  background: var(--dark-bg);
+  color: var(--bright);
+  border-radius: var(--border-radius);
+  padding: 0.09rem 0.30rem;
 }
 
 hr {
@@ -99,9 +108,8 @@ hr {
 }
 
 .content {
-  max-width: 40rem;
-  padding: 0 0.8rem;
-  margin: auto;
+  max-width: 39rem;
+  padding: 0 3rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -119,6 +127,7 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
 
 h1, .h1 {
   font-weight: 900;
+  letter-spacing: -0.04em;
   font-size: var(--h1);
   margin: var(--h3) 0;
 }
@@ -218,11 +227,11 @@ article img {
 }
 
 .kg-width-wide, kg-gallery-image {
-  position: relative;
-  width: 85vw;
+  /* position: relative; */
+  width: 80vw;
   min-width: 100%;
-  margin: auto calc(50% - 50vw);
-  transform: translateX(calc(50vw - 50%));
+  /* margin: auto calc(50% - 50vw); */
+  /* transform: translateX(calc(50vw - 50%)); */
 }
 
 .kg-width-full {
@@ -232,6 +241,10 @@ article img {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+}
+
+.kg-gallery-image {
+  margin-bottom: 1rem;
 }
 
 /* BOOKMARK CARD */
@@ -318,4 +331,13 @@ a.kg-bookmark-container {
 .kg-bookmark-publisher {
   font-size: small;
   margin-left: 0.25rem;
+}
+
+
+@media (max-width: 714px) {
+  html { font-size: 1em; }
+  .content {
+    padding: 0 1rem;
+  }
+
 }
