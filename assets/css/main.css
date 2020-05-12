@@ -256,11 +256,11 @@ h1.tag {
   text-decoration: none;
 }
 
-.tags a.primary-tag {
-  background-color: var(--link-bright);
-  border: 1px solid var(--link-bright);
-  color: white;
-}
+/* .tags a.primary-tag { */
+/*   background-color: var(--link-bright); */
+/*   border: 1px solid var(--link-bright); */
+/*   color: white; */
+/* } */
 
 .tags a:hover {
   background-color: var(--muted-active);
@@ -413,6 +413,19 @@ a.kg-bookmark-container {
   margin-left: 0.25rem;
 }
 
+.embeddable-buttondown-form input {
+  font-size: 1rem;
+  max-width: 100%;
+  width: 12rem;
+  padding: 3px 5px;
+  background-color: #fdfaf5;
+  border: 1px solid #ccc;
+}
+
+.embeddable-buttondown-form input[type="submit"] {
+  width: auto;
+  padding: 3px 12px;
+}
 
 @media (max-width: 936px) {
   html { font-size: 1.25em; }
