@@ -204,8 +204,11 @@ article.tag-notes:hover:after {
 
 article.tag-notes h1, article.tag-notes h2, article.tag-notes h3, article.tag-notes h4 {
   font-size: inherit;
+  line-height: inherit;
   margin: 0;
 }
+
+article.tag-notes p { margin-bottom: inherit; }
 
 article.tag-notes:after
 {
