@@ -176,7 +176,60 @@ small, .small { font-size: 0.75rem; line-height: 1.333rem; }
   padding-top: 1rem;
 }
 
-footer {
+/* NOTES */
+/* ===== */
+article.tag-notes {
+  background: #ffff88; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffff88), color-stop(82%,#ffff88), color-stop(82%,#ffff88), color-stop(100%,#ffffc6)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
+  background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ffffc6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.35rem;
+  border-left: 5px solid #ffbc00;
+  position: relative;
+}
+
+article.tag-notes:hover {
+  background: #ffff88 !important;
+}
+
+article.tag-notes:hover:after {
+  content: none;
+}
+
+article.tag-notes h1, article.tag-notes h2, article.tag-notes h3, article.tag-notes h4 {
+  font-size: inherit;
+  margin: 0;
+}
+
+article.tag-notes:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  right: 10px;
+  left: auto;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #c9bcbc;
+  -webkit-box-shadow: 0 15px 10px #c9bcbc;
+  -moz-box-shadow: 0 15px 10px #c9bcbc;
+  box-shadow: 0 15px 10px #c9bcbc;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+
+footer.site-footer {
   margin: 4rem 0 0 0;
   padding: 2rem 0;
   background-color: #f4e2b626;
@@ -349,15 +402,16 @@ a.kg-bookmark-container {
 
 @media (max-width: 936px) {
   html { font-size: 1.25em; }
-  .content {
-    padding: 0 1.25rem;
-  }
+  .content {padding: 0 1.25rem;}
 }
 
 
 @media (max-width: 720px) {
   html { font-size: 1em; }
-  .content {
-    padding: 0 1rem;
+  .content {padding: 0 1rem;}
+
+  .tag-notes {
+    font-size: 1rem;
+    line-height: inherit;
   }
 }

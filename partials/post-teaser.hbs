@@ -2,7 +2,6 @@
 
   <div>
     <header>
-
       <h2 class="post-teaser__title">
         <a href="{{url}}">
           {{title}}
@@ -11,6 +10,7 @@
           {{/if}}
         </a>
       </h2>
+
     </header>
 
     <div class="post-teaser__excerpt">
@@ -44,7 +44,7 @@
     </a>
     {{/if}}
 
-    <small class="text-muted text-light">
+    <footer class="small text-muted text-light">
       <a href="{{url}}">
         <time class="post-teaser__meta__date" datetime="{{date format='YYYY-MM-DD'}}">
         {{date format="MMMM Do, YYYY"}}.
@@ -52,9 +52,9 @@
         </a>
       {{#if tags}}
         <span class="tags">
-          {{tags separator=" " prefix="Tagged "}}
+          {{tags separator=" "}}
         </span>
       {{/if}}
-    </small>
+    </footer>
  </div> <!-- end post-teaser__text-container -->
  </article>
