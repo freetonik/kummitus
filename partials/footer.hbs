@@ -1,58 +1,60 @@
 <footer>
+  <div class="content">
+    {{^is "home"}}
+    <p>
+      Hi, I'm Rakhim. I teach, program, make podcasts, comics and videos on computer science at <a href="https://codexpanse.com">Codexpanse.com</a>. You can learn more about <a href="/about">my work</a> and even <a href="https://www.patreon.com/rakhim">support me</a> via Patreon.
+    </p>
 
-  {{^is "home"}}
-       <p class="content">
-        Hi, I'm Rakhim. I teach, program, make podcasts, comics and videos on computer science at <a href="https://codexpanse.com">Codexpanse.com</a>. You can learn more about <a href="/about">my work</a> and even <a href="https://www.patreon.com/rakhim">support me</a> via Patreon.
-       </p>
+    <div class="mt2 mb2">
+      <form
+        action="https://buttondown.email/api/emails/embed-subscribe/rakhim"
+        method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/rakhim', 'popupwindow')"
+        class="embeddable-buttondown-form" >
+        <label for="bd-email">Oh, and I have a monthly personal newsletter: </label><br>
+        <input type="email" name="email" id="bd-email">
+        <input type="hidden" value="1" name="embed"/>
+        <input type="submit" value="Subscribe" />
+      </form>
+    </div>
 
-       <div class="mt2 mb2">
-           <form
-             action="https://buttondown.email/api/emails/embed-subscribe/rakhim"
-             method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/rakhim', 'popupwindow')"
-             class="embeddable-buttondown-form" >
-           <label for="bd-email">Oh, and I have a monthly non-spammy personal newsletter: </label><br>
-           <input type="email" name="email" id="bd-email">
-           <input type="hidden" value="1" name="embed"/>
-           <input type="submit" value="Subscribe" />
-         </form>
-       </div>
 
-  {{/is}}
 
-  {{#if @site.secondary_navigation}}
-    <nav class="site-footer__navigation" role="navigation">
-      {{navigation type="secondary"}}
-    </nav>
+{{/is}}
+
+{{#if @site.secondary_navigation}}
+<nav class="site-footer__navigation" role="navigation">
+  {{navigation type="secondary"}}
+</nav>
+{{/if}}
+
+<nav class="site-nav">
+  {{navigation}}
+
+  {{#if @labs.members}}
+  {{#if @member}}
+  <ul>
+    <li>
+      <a href="{{@site.url}}/account">Account</a>
+    </li>
+    <li>
+      <button role="link" data-members-signout>Sign out</button>
+    </li>
+  </ul>
+{{else}}
+  <ul>
+    <li>
+      <a href="{{@site.url}}/signin">Log in</a>
+    </li>
+    <li>
+      <a href="{{@site.url}}/signup">Subscribe</a>
+    </li>
+  </ul>
   {{/if}}
+  {{/if}}
+</nav>
 
-    <nav class="site-nav">
-    {{navigation}}
-
-    {{#if @labs.members}}
-      {{#if @member}}
-      <ul>
-        <li>
-          <a href="{{@site.url}}/account">Account</a>
-        </li>
-        <li>
-          <button role="link" data-members-signout>Sign out</button>
-        </li>
-      </ul>
-      {{else}}
-      <ul>
-        <li>
-          <a href="{{@site.url}}/signin">Log in</a>
-        </li>
-        <li>
-          <a href="{{@site.url}}/signup">Subscribe</a>
-        </li>
-      </ul>
-      {{/if}}
-    {{/if}}
-  </nav>
-
-  <small class="site-footer__attribution credits text-muted">
-         © Rakhim Davletkaliyev, {{date format="YYYY"}}.<br>
-  </small>
-
+<small class="site-footer__attribution credits text-muted">
+  © Rakhim Davletkaliyev, {{date format="YYYY"}}.<br>
+</small>
+  </div>
 </footer>

@@ -12,19 +12,20 @@
 
   --border-radius: 5px;
 
-  --h1: 3.157rem;
-  --h2: 2.369rem;
-  --h3: 1.777rem;
-  --h4: 1.333rem;
+  --h1-title: 2.625rem;
+  --h1: 2.04rem;
+  --h2: 1.625rem;
+  --h3: 1.291rem;
+  --h4: 1rem;
 }
 
 html { font-size: 1.5em; }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, Helvetica, Arial, sans-serif;
   ext-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.5rem;
+  line-height: 1.66rem;
   color: var(--main);
   background-color: var(--main-bg);
   display: flex;
@@ -37,7 +38,9 @@ body {
   overflow-x: hidden;
 }
 
-p { margin-bottom: var(--h4); }
+p, ul, ol, blockquote, pre, .alert, .note, .box, .footnotes {
+	margin-bottom: 1.666rem;
+}
 
 a:link, a:visited {
   color: var(--link);
@@ -49,8 +52,8 @@ blockquote {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-style: oblique;
   font-size: 1rem;
-  border-left: 5px solid var(--link-bright);
-  padding: 0.75rem 2rem 0.75rem 1rem;
+  border-left: 6px solid var(--link-bright);
+  padding: 0.2rem 2rem 0.25rem 1.5rem;
   margin: 0;
 }
 
@@ -69,12 +72,20 @@ figcaption {
   text-align: center;
 }
 
+ul, ol {
+  margin-left: 1.6rem;
+}
+
 li {
-  line-height: 1.75rem;
+  margin-bottom: 0.625rem;
+}
+
+ul ul, ul ol, ol ul, ol ol, blockquote.right p, blockquote.left p, .alert :last-child, .note :last-child, .box :last-child, .footnotes :last-child {
+	margin-bottom: 0;
 }
 
 /* main site navigation */
-nav.site-nav ul { padding-inline-start: 0; }
+nav.site-nav ul { padding-inline-start: 0; margin-left: 0;  }
 nav.site-nav ul li { list-style: none; display: inline; }
 nav.site-nav ul li:after { content:" | "; color: var(--muted-2); }
 nav.site-nav ul li:last-child:after { content: none; }
@@ -93,9 +104,8 @@ pre {
 
 pre code { padding: 0; }
 
-code {
-  background: var(--dark-bg);
-  color: var(--bright);
+li code, ul code, ol code, p code {
+  background: #2a36441c;
   border-radius: var(--border-radius);
   padding: 0.09rem 0.30rem;
 }
@@ -109,7 +119,7 @@ hr {
 
 .content {
   max-width: 39rem;
-  padding: 0 3rem;
+  padding: 0 3rem 0 4rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -120,31 +130,37 @@ hr {
 
 /* Typography */
 /* ========== */
-h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
-  font-weight: 700;
-  line-height: 1;
+h1.title {
+  font-size: var(--h1-title);
 }
 
 h1, .h1 {
-  font-weight: 900;
-  letter-spacing: -0.04em;
   font-size: var(--h1);
-  margin: var(--h3) 0;
+  font-weight: 900;
+  line-height: 3.1rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.66rem;
 }
 
 h2, .h2 {
   font-size: var(--h2);
-  margin: var(--h1) 0 var(--h4) 0;
+  line-height: 2.58rem;
+  margin-top: 2.7rem;
+  margin-bottom: 1rem;
 }
 
 h3, .h3 {
   font-size: var(--h3);
-  margin: var(--h2) 0 var(--h4);
+  line-height: 2.083rem;
+  margin-top: 1.666rem;
+  margin-bottom: 0.625rem;
 }
 
 h4, .h4 {
   font-size: var(--h4);
-  margin: var(--h2) 0 var(--h4);
+  line-height: 1.666rem;
+  font-weight: bold;
+  margin-bottom: 0.375rem;
 }
 
 h1 a:link, h1 a:visited, h1 a:hover, a.unstyled:link, a.unstyled:visited, a.unstyled:hover, h2 a:link, h2 a:visited, h2 a:hover, a.unstyled:link, a.unstyled:visited, a.unstyled:hover {
@@ -153,7 +169,7 @@ h1 a:link, h1 a:visited, h1 a:hover, a.unstyled:link, a.unstyled:visited, a.unst
 }
 
 small, .small { font-size: 0.75rem; line-height: 1.333rem; }
-.text-muted { color: #afa598; }
+.text-muted { color: var(--muted); }
 .text-muted a, .text-muted a:visited { color: inherit; }
 
 .main-header {
@@ -161,9 +177,8 @@ small, .small { font-size: 0.75rem; line-height: 1.333rem; }
 }
 
 footer {
-  text-align: center;
   margin: 4rem 0 0 0;
-  padding: 2rem 1rem 1rem;
+  padding: 2rem 0;
   background-color: #f4e2b626;
   border-top: 1px solid #cbc3af;
 }
@@ -227,11 +242,9 @@ article img {
 }
 
 .kg-width-wide, kg-gallery-image {
-  /* position: relative; */
   width: 80vw;
   min-width: 100%;
-  /* margin: auto calc(50% - 50vw); */
-  /* transform: translateX(calc(50vw - 50%)); */
+  max-width: 50rem;
 }
 
 .kg-width-full {
@@ -334,10 +347,17 @@ a.kg-bookmark-container {
 }
 
 
-@media (max-width: 714px) {
+@media (max-width: 936px) {
+  html { font-size: 1.25em; }
+  .content {
+    padding: 0 1.25rem;
+  }
+}
+
+
+@media (max-width: 720px) {
   html { font-size: 1em; }
   .content {
     padding: 0 1rem;
   }
-
 }
