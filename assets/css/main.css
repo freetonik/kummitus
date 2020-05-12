@@ -256,6 +256,12 @@ h1.tag {
   text-decoration: none;
 }
 
+.tags a.primary-tag {
+  background-color: var(--link-bright);
+  border: 1px solid var(--link-bright);
+  color: white;
+}
+
 .tags a:hover {
   background-color: var(--muted-active);
 }

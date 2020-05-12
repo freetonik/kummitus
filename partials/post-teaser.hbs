@@ -1,60 +1,57 @@
 <article class="{{post_class}} mb4">
 
-  <div>
-    <header>
-      <h2 class="post-teaser__title">
-        <a href="{{url}}">
-          {{title}}
-          {{#if featured}}
-            ★
-          {{/if}}
-        </a>
-      </h2>
+<div>
+  <header>
+    <h2 class="post-teaser__title">
+      <a href="{{url}}">
+        {{title}}
+        {{#if featured}}
+          ★
+        {{/if}}
+      </a>
+    </h2>
 
-    </header>
+  </header>
 
-    <div class="post-teaser__excerpt">
-      <p>
-        {{#has any="custom_excerpt"}}
-          {{excerpt words="100"}}
-          <span class="read-more">
-            <a class="read-more__link" href="{{url}}">
-              <span>Read&nbsp;more&nbsp;&raquo;</span>
-            </a>
-          </span>
-        {{else}}
-          {{content}}
-        {{/has}}
+  <p>
+  {{#has any="custom_excerpt"}}
+  {{excerpt words="100"}}
+  <span class="read-more">
+    <a class="read-more__link" href="{{url}}">
+      <span>Read&nbsp;more&nbsp;&raquo;</span>
+    </a>
+  </span>
+  {{else}}
+    {{content}}
+  {{/has}}
+  </p>
 
-
-      </p>
-    </div>
-
-    {{#if feature_image}}
+  {{#if feature_image}}
     <a href="{{url}}">
-    <div class="post-teaser__thumbnail mb1" id="{{url}}-post-thumbnail">
-      <img class="post-card-image"
+      <div class="post-teaser__thumbnail mb1" id="{{url}}-post-thumbnail">
+        <img class="post-card-image"
         srcset="{{img_url feature_image size="xs"}} 400w,
-                {{img_url feature_image size="s"}} 600w,
-                {{img_url feature_image size="m"}} 800w"
+        {{img_url feature_image size="s"}} 600w,
+        {{img_url feature_image size="m"}} 800w"
         src="{{img_url feature_image size="xs"}}"
         alt="{{title}}"
-      />
-    </div>
+        />
+      </div>
     </a>
-    {{/if}}
+  {{/if}}
 
-    <footer class="small text-muted text-light">
-      <a href="{{url}}">
-        <time class="post-teaser__meta__date" datetime="{{date format='YYYY-MM-DD'}}">
-        {{date format="MMMM Do, YYYY"}}.
-        </time>
-        </a>
-      {{#if tags}}
-        <span class="tags">
-          {{tags separator=" "}}
-        </span>
-      {{/if}}
-    </footer>
- </div> <!-- end post-teaser__text-container -->
- </article>
+  <footer class="small text-muted text-light">
+    <a href="{{url}}">
+      <time class="post-teaser__meta__date" datetime="{{date format='YYYY-MM-DD'}}">
+      {{date format="MMMM Do, YYYY"}}.
+      </time>
+    </a>
+    {{#if tags}}
+      <span class="tags">
+        {{#primary_tag}} <a class="primary-tag" href="{{url}}">{{name}}</a> {{/primary_tag}}
+        {{tags from="2" separator=" "}}
+      </span>
+    {{/if}}
+  </footer>
+</div> <!-- end post-teaser__text-container -->
+</article>
