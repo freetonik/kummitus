@@ -1,0 +1,37 @@
+{{!< default}}
+
+{{>content-header}}
+
+<main class="content" id="content">
+
+<article class="page {{post_class}}">
+{{#post}}
+
+  <header class="page__header">
+    <h1 class="page__title mt0">{{title}}</h1>
+  </header>
+
+  <section class="page__content">
+    {{content}}
+
+    {{#get "posts" include="tags"}}
+    {{#foreach posts}}
+      <p class="mb1">
+        <a href="{{url}}">
+          {{title}}
+        </a>
+        {{#if tags}}
+            <span class="mr1 small text-muted text-light tags">
+              {{tags separator=" "}}
+            </span>
+        {{/if}}
+        <time class="small text-muted" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD/MM/YYYY"}}.</time>
+      </p>
+    {{/foreach}}
+    {{/get}}
+  </section>
+
+{{/post}}
+</article>
+
+</main>
