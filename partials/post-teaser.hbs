@@ -41,11 +41,7 @@
   {{/if}}
 
   <footer class="small text-muted text-light">
-    <a href="{{url}}">
-      <time class="post-teaser__meta__date" datetime="{{date format='YYYY-MM-DD'}}">
-      {{date format="MMMM Do, YYYY"}}.
-      </time>
-    </a>
+    <a href="{{url}}"> <time class="post-teaser__meta__date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM Do, YYYY"}}</time></a>
     {{#if tags}}
       <span class="tags">
         {{#primary_tag}} <a class="primary-tag" href="{{url}}">{{name}}</a> {{/primary_tag}}
