@@ -2,7 +2,7 @@
   "name": "kummitus",
   "description": "A Ghost theme for rakhim.org",
   "demo": "http://github.com/freetonik/kummitus",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "ghost": ">=3.11.0",
     "ghost-api": "v3"
