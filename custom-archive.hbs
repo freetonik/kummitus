@@ -1,0 +1,66 @@
+{{!< default}}
+
+{{>content-header}}
+
+<main class="content" id="content">
+
+    <article class="page {{post_class}}">
+        {{#post}}
+
+            <header class="page__header">
+                <h1 class="page__title mt0">{{title}}</h1>
+            </header>
+
+            <section class="page__content">
+                {{content}}
+
+                <h2>Tags</h2>
+                <div class="text-muted text-light">
+                    <span class="tags">
+                        {{#get 'tags' limit='all'}}
+                            {{#foreach tags}}
+                                <a href='{{ url }}'>{{ name }}</a>
+                            {{/foreach}}
+                        {{/get}}
+                    </span>
+                </div>
+
+                <h2>Pages</h2>
+                <ul class="unstyled">
+                    {{#get "pages" limit="all"}}
+                        {{#foreach pages}}
+                            <li>
+                                <a href="{{url}}">
+                                    {{title}}
+                                </a>
+                            </li>
+                        {{/foreach}}
+                    {{/get}}
+                </ul>
+
+                <h2>Posts</h2>
+                <ul class="unstyled">
+                    {{#get "posts" include="tags"}}
+                    {{#foreach posts}}
+                        <li class="mb1">
+                            <a href="{{url}}">
+                                {{title}}
+                            </a>
+                            {{#if tags}}
+                                <span class="mr1 small text-muted text-light tags">
+                                    {{tags separator=" "}}
+                                </span>
+                            {{/if}}
+                            <time class="small text-muted" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD/MM/YYYY"}}.</time>
+                        </li>
+                    {{/foreach}}
+                {{/get}}
+            </section>
+
+        {{/post}}
+    </article>
+</main>
+
+
+
+
