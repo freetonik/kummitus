@@ -144,7 +144,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: var(--h2);
-  line-height: 2.58rem;
+  line-height: 2rem;
   margin-top: 2.7rem;
   margin-bottom: 1rem;
 }
